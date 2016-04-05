@@ -8,8 +8,8 @@ include_once 'configurazioneDB.php';
     
     //versione del MIME
     $headers = "MIME-Version: 1.0\r\n";
-    //multipart/alternative per indicare che il messaggio ï¿½ costituito da piï¿½ parti
-    //(ï¿½multipartï¿½) le quali sono tra loro alternative (ï¿½alternativeï¿½). Separate dal BOUNDARY
+    //multipart/alternative per indicare che il messaggio � costituito da pi� parti
+    //(�multipart�) le quali sono tra loro alternative (�alternative�). Separate dal BOUNDARY
     $headers .= "Content-type: multipart/alternative; boundary='$boundary'\r\n";
     // costruiamo intestazione generale
     $headers .= "From: miaemail@gmail.com \r\n";
@@ -19,7 +19,7 @@ include_once 'configurazioneDB.php';
     $comando = "SELECT * FROM azienda where email= '" . $email . "'";
     $result= mysql_query($comando); 
     
-    //verifico se la emal e' presente nel database, se il conteggio non Ã¨ >0 ci sarÃ  un messaggio di errore, altrimenti
+    //verifico se la emal e' presente nel database, se il conteggio non è >0 ci sarà un messaggio di errore, altrimenti
     //verra' eseguita la procedure per l'invio mail
  if (!$result)
   {
@@ -53,7 +53,7 @@ include_once 'configurazioneDB.php';
    {
    	echo "<body style='background-color:#8080ff; font-family: monospace; font-size: x-large; color: white; text-align: center;'>
 	  		Salve,<br>";
-   	echo "Un' email Ã¨ stata mandata con successo all'indirizzo email <b>" . $to . "</b> da te fornito.<br><br>";
+   	echo "Un' email è stata mandata con successo all'indirizzo email <b>" . $to . "</b> da te fornito.<br><br>";
    	echo "<br>";
    	echo "Per creare una nuova password devi aprire la tua casella e-mail, leggere il messaggio  e cliccare sul link che troverai all'interno.<br><br>Tra pochi secondi verrai reindirizzato alla pagina di login</body>";
    	// reindirizzamento a tempo
@@ -62,7 +62,7 @@ include_once 'configurazioneDB.php';
   }
    else {
    	echo "<body style='background-color:#8080ff; font-family: monospace; font-size: x-large; color: white; text-align: center;'>
-	  			Errore: l'email inserita non Ã¨ corretta
+	  			Errore: l'email inserita non è corretta
 	  		</body>";
    	      header( "refresh:10;LOGIN2.php" );
    }
